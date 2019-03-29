@@ -1,0 +1,124 @@
+<!-- 
+    
+    1. Formulare permettant l'inscription d'un utlisateur à une newsletter. Vous utiliserez Bootstrap 
+    
+    * Email
+    * Prenom
+    * Nom
+    * Submit
+    
+    2. Effectuer les vérifications JQUERY (nom, prenom, mail)
+    
+-->
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Vérification d'un formulaire en Jquery </title>
+</head>
+
+
+<body class="bg-light">
+    <div class="container col-md-6 mx-auto">
+        <div class="py-5 text-center">
+            <img class="d-block mx-auto mb-4" src="./../../WORDPRESS-DEV/DevFolio/img/fav.png" alt="" width="72" height="72">
+            <h2>Vérification d'un formulaire en Jquery</h2>
+            <h5> Il est chiant Hugo avec ces exercices à la noix de pécan</h5>
+            <br><br>
+            <p class="lead">Créer un formulare permettant l'inscription d'un utlisateur à une newsletter. Vous utiliserez Bootstrap <br><br>
+            * Email / * Prenom / * Nom / * Submit 
+            <br><br>
+            2. Effectuer les vérifications JQUERY (nom, prenom, mail)</p>
+        </div>
+        
+            <div class="col-md-12 order-md-1">
+                <h4 class="mb-3">NEWSLETTER</h4>
+                <form method="POST" class="needs-validation" novalidate="">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label id="nom" for="firstName">Nom
+                                    <span class="name"> </span>
+                            </label>
+                            <input type="text" class="form-control" id="firstName" placeholder="" value="" required="">
+                            <div class="invalid-feedback">
+                                Veuillez rentrer un Nom valide
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label id="pre" for="lastName">Prénom
+                                    <span class="prenom"> </span>
+                            </label>
+                            <input type="text" class="form-control" id="lastName" placeholder="" value="" required="">
+                            <div class="invalid-feedback">
+                               Veuillez rentrer un Prénom valide
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="mb-3">
+                        <label id="lab" for="email">Email 
+                            <span class="email"> </span></label>
+                        <input type="email" class="form-control" id="email" placeholder="Monemail@example.com">
+                        <div class="invalid-feedback">
+                            Entrer une Email valide
+                        </div>
+                    </div>
+                    
+                    <button class="col-md-4 btn btn-primary btn-lg btn-block mx-auto mt-4" type="submit">Envoie ça mon gros ! </button>
+                </form>
+            </div>
+        </div>
+        
+        <footer class="my-5 pt-5 text-muted text-center text-small">
+            <p class="mb-1">© 2019 Asam</p>
+
+        </footer>
+    </div>
+
+
+    <!-- =========== SCRIPTS ============== -->
+    
+    <script 
+    src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" 
+    crossorigin="anonymous">
+    </script>
+
+    <script>
+    window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    
+    <script 
+    src="/docs/4.3/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" 
+    crossorigin="anonymous">
+    </script>
+
+    <script 
+    src="form-validation.js">
+    </script>
+
+    <!-- Bootstrap -->
+    <script 
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+
+    <!-- Jquery -->
+    <script 
+    src="http://code.jquery.com/jquery-3.3.1.min.js" 
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous">
+    </script>
+
+    <!-- Notre fichier JS -->
+    <script 
+    src="jquery.js">
+    </script>
+
+</body>
+</html>

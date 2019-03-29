@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercice 2</title>
+    
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+    
+    <style>
+    
+        main {
+            max-width: 990px;
+            width: 100%;
+            height: auto;
+            margin: 0 auto;
+        }
+
+        body
+        {
+            background-image: url(img/login-register.jpg);
+        }
+        
+        section {
+            width: 100%;
+            height: auto;
+            min-height: 100px;
+            margin-bottom: 10px;
+            background-image: linear-gradient(0deg, #EEE 0%, #FFF 100%);
+            border: 1px solid #EEE;
+        }
+        
+        h1 {
+            font-family: 'Roboto Slab', serif;
+            font-weight: normal;
+            text-align: center;
+            color: #000;
+        }
+        
+        article {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        
+        input[type=text] {
+            width: 100%;
+            height: 50px;
+            background-image: linear-gradient(0deg, #EEE 0%, #FFF 100%);
+            border:1px solid #EEE;
+            font-family: 'Roboto Slab', serif;
+            font-size: 14px;
+            text-indent: 10px;
+            margin-bottom: 10px;
+        }
+        mark{
+            background: orange;
+            color: black;
+        }
+    
+    </style>
+</head>
+<body>
+    <!-- CONSIGNE : Avec l'aide de jQuery, vous devrez :
+    
+       1. Définir une structure HTML5 & CSS3 pour afficher des articles.
+       
+       2. Afficher une liste d'articles à partir de l'API :  https://jsonplaceholder.typicode.com/posts
+       
+       3. BONUS : Afficher uniquement les 10 premiers articles.
+       
+       4. BONUS : Mettre en Place Markjs.io afin de surligner des mots dans les différents articles à l'aide d'un champ input.
+     
+    -->
+
+    <main>
+        <input type="text" placeholder="Saisissez un terme à surligner..." id="markJS">
+        <section>
+            <header>
+                <h1>TITRE</h1>
+            </header>
+            <article>
+                MON CONTENU
+            </article>
+        </section>
+    </main>
+   
+    <!-- Intégration de jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+    <!-- Intégration de MarkJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+    <script>
+        
+        $(function() {
+            
+            $.getJSON(' https://jsonplaceholder.typicode.com/posts', function(data) {
+                console.log(data);
+                     for(let i = 0 ; i < 4 ; i++)
+
+                    $(`
+                        <section>
+                            <header>
+                                <h1>${data[i].title}</h1>
+                            </header>
+                            <article>
+                                ${data[i].body} ${data[i].title}
+                            </article>
+                        </section>
+                    `)
+                    .css({'background':'light', 'color':'dark',})
+                    .appendTo( $('main') );
+
+                });
+
+                // ------------ MarkJS
+                    // je cible l'élément que je veux écouter  
+                    //  Grace a la fonction .on() je peux écouter un event.
+                    $('#markJS').on('input', function(){
+                    /*-- Cette fonction anonyme va s'executer a chaque fois
+                        que l'utilisateur va appuyer sur une touche de clavier.
+                    --*/
+
+                    // Afficher la saisie de l'utilisateur dans la console.
+                        console.log( $('#markJS').val() );
+
+                    // Surligner la saisie de l'utilisateur
+                        let keyword = $('#markJS').val();
+                        $('section').unmark().mark( keyword );
+                    });   
+
+                });  // fin de $(function(){})
+    </script>
+</body>
+</html>
