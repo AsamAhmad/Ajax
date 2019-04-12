@@ -2,5 +2,11 @@
 
 body
 {
-    background-image: url(./../img/login-register.jpg);
+    background-image: url(./img/login-register.jpg);
+}
+
+.mb-1.lead
+{
+    color: red;
+    stroke-linecap: butt;
 }
